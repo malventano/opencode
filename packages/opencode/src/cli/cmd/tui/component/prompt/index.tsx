@@ -1089,6 +1089,8 @@ export function Prompt(props: PromptProps) {
       sessionID = res.data.id
     }
 
+    sync.session.prune(sessionID)
+
     const messageID = MessageID.ascending()
     let inputText = store.prompt.input
 
